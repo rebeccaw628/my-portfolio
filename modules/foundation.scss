@@ -1,0 +1,9 @@
+@use "../partials/palette.scss";
+@use "./mixins.scss";
+
+a {
+  @include mixins.navbar(15px, 500);
+  text-shadow: 0 0 10px palette.$lighter-blue;
+  color: palette.$white;
+  text-decoration: none;
+}

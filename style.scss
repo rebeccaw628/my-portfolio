@@ -1,0 +1,59 @@
+@use "./partials/palette.scss";
+@use "./modules/mixins.scss";
+@use "./modules/foundation.scss";
+@use "./partials/media-queries.scss" as q;
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: #857f7f;
+  background: radial-gradient(
+    circle,
+    rgba(133, 127, 127, 1) 0%,
+    rgba(28, 27, 27, 1) 100%
+  );
+  width: 100%;
+  padding: 10px;
+}
+
+.navbar {
+  @include mixins.flex(row, space-between, nowrap);
+  @include mixins.navbar(1.7em, 600);
+  //   padding: 5px;
+  border: solid 2px red;
+
+  &__menu {
+    @include mixins.flex(column, center, nowrap);
+    @include mixins.navbar(1em, 1000);
+    align-items: flex-end;
+  }
+
+  &__btn {
+    @include mixins.flex(column, center, nowrap);
+    gap: 5px;
+    background: none;
+    border: none;
+  }
+
+  &__hamburger {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: palette.$white;
+    color: black;
+    border-radius: 2px;
+    // transition: all 0.3s ease;
+  }
+  &__text {
+    @include mixins.flex(column, center, nowrap);
+    align-items: flex-end;
+    list-style: none;
+  }
+}
+.hidden {
+  display: none;
+}

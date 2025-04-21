@@ -1,0 +1,21 @@
+@use "../partials/typography" as t;
+@use "../partials/palette";
+
+@mixin navbar($size, $weight) {
+  font-family: t.$primary-font;
+  color: palette.$white;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin flex(
+  $direction: column,
+  $justify: center,
+  // $align: center,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
