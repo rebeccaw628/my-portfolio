@@ -2,8 +2,8 @@
 @use "./mixins.scss";
 
 a {
-  @include mixins.navbar(15px, 500);
-  text-shadow: 0 0 10px palette.$lighter-blue;
-  color: palette.$white;
+  @include mixins.text(15px, 600);
+  text-shadow: 0 0 2px palette.$light;
+  color: palette.$light;
   text-decoration: none;
 }

@@ -8,27 +8,25 @@
   padding: 0;
   scroll-behavior: smooth;
 }
-
+// Navbar styling
 header {
-  background: #857f7f;
-  background: radial-gradient(
-    circle,
-    rgba(133, 127, 127, 1) 0%,
-    rgba(28, 27, 27, 1) 100%
-  );
-  width: 100%;
-  padding: 10px;
+  // @include mixins.background;
+  // width: 100%;
+  // padding: 15px;
 }
 
 .navbar {
   @include mixins.flex(row, space-between, nowrap);
-  @include mixins.navbar(1.7em, 600);
-  //   padding: 5px;
+  @include mixins.text(1.7em, 600);
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  @include mixins.background;
+  padding: 15px;
   border: solid 2px red;
 
   &__menu {
     @include mixins.flex(column, center, nowrap);
-    @include mixins.navbar(1em, 1000);
     align-items: flex-end;
   }
 
@@ -43,10 +41,9 @@ header {
     display: block;
     width: 30px;
     height: 4px;
-    background-color: palette.$white;
+    background-color: palette.$light;
     color: black;
     border-radius: 2px;
-    // transition: all 0.3s ease;
   }
   &__text {
     @include mixins.flex(column, center, nowrap);
@@ -56,4 +53,76 @@ header {
 }
 .hidden {
   display: none;
+}
+
+// Styling for all pages
+.content {
+  @include mixins.flex(column, center, nowrap);
+  @include mixins.text(1em, 1000);
+}
+
+.page-block {
+  width: 100%;
+  height: 100vh;
+  //   padding-top: 60px;
+  @include mixins.background;
+  padding: 15px;
+}
+
+// Landing page styling
+.landing {
+  @include mixins.flex(column, center, nowrap);
+  align-items: flex-start;
+  gap: 35px;
+  border-top: 0;
+
+  &__text {
+    @include mixins.text(2.7em, 1000);
+  }
+
+  &__name {
+    display: block;
+  }
+
+  &__role {
+    @include mixins.text(1.3em, 600);
+  }
+}
+
+//Skills page styling
+.skills {
+  @include mixins.flex(column, flex-start, nowrap);
+  gap: 30px;
+  &__title {
+    @include mixins.text(2.7em, 1000);
+  }
+
+  &__container {
+    @include mixins.flex(column, center, nowrap);
+    gap: 25px;
+    @include q.md-up {
+      @include mixins.flex(row, center, wrap);
+    }
+  }
+
+  &__card {
+    @include mixins.flex(row, center, wrap);
+    align-items: center;
+    gap: 10px;
+    @include q.md-up {
+      @include mixins.flex(column, center, wrap);
+    }
+  }
+
+  &__type {
+    @include mixins.text(1.7em, 600);
+  }
+
+  &__logo {
+    font-size: 2.2em;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(1.5);
+    }
+  }
 }

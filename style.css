@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 a {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Code Pro", monospace, sans-serif;
   color: rgb(224, 224, 224);
   font-size: 15px;
-  font-weight: 500;
-  text-shadow: 0 0 10px #ecf2f9;
+  font-weight: 600;
+  text-shadow: 0 0 2px rgb(224, 224, 224);
   color: rgb(224, 224, 224);
   text-decoration: none;
 }
@@ -15,22 +15,21 @@ a {
   scroll-behavior: smooth;
 }
 
-header {
-  background: #857f7f;
-  background: radial-gradient(circle, rgb(133, 127, 127) 0%, rgb(28, 27, 27) 100%);
-  width: 100%;
-  padding: 10px;
-}
-
 .navbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: nowrap;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Source Code Pro", monospace, sans-serif;
   color: rgb(224, 224, 224);
   font-size: 1.7em;
   font-weight: 600;
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  background-color: #857f7f;
+  background: radial-gradient(circle, rgb(133, 127, 127) 0%, rgb(28, 27, 27) 100%);
+  padding: 15px;
   border: solid 2px red;
 }
 .navbar__menu {
@@ -38,10 +37,6 @@ header {
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
-  font-family: "Montserrat", sans-serif;
-  color: rgb(224, 224, 224);
-  font-size: 1em;
-  font-weight: 1000;
   align-items: flex-end;
 }
 .navbar__btn {
@@ -72,6 +67,108 @@ header {
 
 .hidden {
   display: none;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  font-family: "Source Code Pro", monospace, sans-serif;
+  color: rgb(224, 224, 224);
+  font-size: 1em;
+  font-weight: 1000;
+}
+
+.page-block {
+  width: 100%;
+  height: 100vh;
+  background-color: #857f7f;
+  background: radial-gradient(circle, rgb(133, 127, 127) 0%, rgb(28, 27, 27) 100%);
+  padding: 15px;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 35px;
+  border-top: 0;
+}
+.landing__text {
+  font-family: "Source Code Pro", monospace, sans-serif;
+  color: rgb(224, 224, 224);
+  font-size: 2.7em;
+  font-weight: 1000;
+}
+.landing__name {
+  display: block;
+}
+.landing__role {
+  font-family: "Source Code Pro", monospace, sans-serif;
+  color: rgb(224, 224, 224);
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 30px;
+}
+.skills__title {
+  font-family: "Source Code Pro", monospace, sans-serif;
+  color: rgb(224, 224, 224);
+  font-size: 2.7em;
+  font-weight: 1000;
+}
+.skills__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 25px;
+}
+@media screen and (min-width: 769px) {
+  .skills__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+.skills__card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (min-width: 769px) {
+  .skills__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+.skills__type {
+  font-family: "Source Code Pro", monospace, sans-serif;
+  color: rgb(224, 224, 224);
+  font-size: 1.7em;
+  font-weight: 600;
+}
+.skills__logo {
+  font-size: 2.2em;
+  transition: all 0.2s ease-in-out;
+}
+.skills__logo:hover {
+  transform: scale(1.5);
 }
 
 /*# sourceMappingURL=style.css.map */

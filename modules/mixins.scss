@@ -1,21 +1,25 @@
 @use "../partials/typography" as t;
 @use "../partials/palette";
 
-@mixin navbar($size, $weight) {
+@mixin text($size, $weight) {
   font-family: t.$primary-font;
-  color: palette.$white;
+  color: palette.$light;
   font-size: $size;
   font-weight: $weight;
 }
 
-@mixin flex(
-  $direction: column,
-  $justify: center,
-  // $align: center,
-  $wrap: nowrap
-) {
+@mixin flex($direction: column, $justify: center, $wrap: nowrap) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   flex-wrap: $wrap;
+}
+
+@mixin background {
+  background-color: #857f7f;
+  background: radial-gradient(
+    circle,
+    rgba(133, 127, 127, 1) 0%,
+    rgba(28, 27, 27, 1) 100%
+  );
 }
