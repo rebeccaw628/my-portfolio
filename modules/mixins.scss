@@ -1,11 +1,12 @@
 @use "../partials/typography" as t;
 @use "../partials/palette";
 
-@mixin text($size, $weight) {
+@mixin text($size, $weight, $spacing) {
   font-family: t.$primary-font;
   color: palette.$light;
   font-size: $size;
   font-weight: $weight;
+  letter-spacing: 2px;
 }
 
 @mixin flex($direction: column, $justify: center, $wrap: nowrap) {
@@ -22,4 +23,10 @@
     rgba(133, 127, 127, 1) 0%,
     rgba(28, 27, 27, 1) 100%
   );
+}
+
+@mixin hover {
+  transform: scale(1.2);
+  transition: 0.5s;
+  filter: drop-shadow(5px 5px 10px #777777);
 }

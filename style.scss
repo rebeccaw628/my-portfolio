@@ -1,6 +1,5 @@
 @use "./partials/palette.scss";
 @use "./modules/mixins.scss";
-@use "./modules/foundation.scss";
 @use "./partials/media-queries.scss" as q;
 
 * {
@@ -8,26 +7,29 @@
   padding: 0;
   scroll-behavior: smooth;
 }
-// Navbar styling
-header {
-  // @include mixins.background;
-  // width: 100%;
-  // padding: 15px;
+
+a {
+  text-decoration: none;
 }
 
+// Navbar styling
 .navbar {
   @include mixins.flex(row, space-between, nowrap);
-  @include mixins.text(1.7em, 600);
+  @include mixins.text(1.7em, 600, 2px);
   box-sizing: border-box;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   @include mixins.background;
-  padding: 15px;
-  border: solid 2px red;
+  padding: 25px;
+  z-index: 2;
 
   &__menu {
     @include mixins.flex(column, center, nowrap);
     align-items: flex-end;
+    right: 15px;
+    @include q.md-up {
+      margin-right: 3vw;
+    }
   }
 
   &__btn {
@@ -35,6 +37,9 @@ header {
     gap: 5px;
     background: none;
     border: none;
+    @include q.md-up {
+      display: none;
+    }
   }
 
   &__hamburger {
@@ -45,60 +50,116 @@ header {
     color: black;
     border-radius: 2px;
   }
+
   &__text {
     @include mixins.flex(column, center, nowrap);
     align-items: flex-end;
     list-style: none;
   }
+
+  &__pages {
+    @include mixins.text(15px, 600, 2px);
+    text-shadow: 0 0 2px palette.$light;
+    color: palette.$light;
+    text-decoration: none;
+  }
 }
-.hidden {
+.toggle {
   display: none;
+  @include q.md-up {
+    @include mixins.flex(row, center, nowrap);
+    gap: 3vw;
+  }
 }
 
 // Styling for all pages
 .content {
   @include mixins.flex(column, center, nowrap);
-  @include mixins.text(1em, 1000);
+  @include mixins.text(1em, 1000, 2px);
+  @include mixins.background;
 }
 
 .page-block {
   width: 100%;
   height: 100vh;
-  //   padding-top: 60px;
-  @include mixins.background;
-  padding: 15px;
+  box-sizing: border-box;
+  padding: 25px;
 }
 
 // Landing page styling
 .landing {
   @include mixins.flex(column, center, nowrap);
   align-items: flex-start;
-  gap: 35px;
+  gap: 40px;
   border-top: 0;
+  position: relative;
 
-  &__text {
-    @include mixins.text(2.7em, 1000);
+  &__intro {
+    @include mixins.flex(column, center, nowrap);
+    gap: 15px;
   }
 
   &__name {
-    display: block;
+    @include mixins.text(2.7em, 600, 2px);
   }
 
   &__role {
-    @include mixins.text(1.3em, 600);
+    @include mixins.text(1.3em, 600, 2px);
+  }
+}
+
+.socials {
+  @include mixins.flex(column, center, nowrap);
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+
+  &__icons {
+    color: palette.$light;
+    font-size: 35px;
+    &:hover {
+      @include mixins.hover;
+    }
+  }
+}
+
+// About page styling
+.about_container {
+  @include mixins.flex(column, center, nowrap);
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+}
+
+.about {
+  @include mixins.flex(column, center, nowrap);
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+
+  &__heading {
+    @include mixins.text(2.5em, 600, 2px);
+  }
+
+  &__intro {
+    @include mixins.text(1em, 600, 2px);
+    text-align: center;
   }
 }
 
 //Skills page styling
 .skills {
   @include mixins.flex(column, flex-start, nowrap);
-  gap: 30px;
-  &__title {
-    @include mixins.text(2.7em, 1000);
+  gap: 20px;
+  height: 100%;
+
+  &__heading {
+    @include mixins.text(2.5em, 600, 2px);
+    text-align: center;
   }
 
   &__container {
-    @include mixins.flex(column, center, nowrap);
+    @include mixins.flex(row, center, wrap);
     gap: 25px;
     @include q.md-up {
       @include mixins.flex(row, center, wrap);
@@ -106,23 +167,120 @@ header {
   }
 
   &__card {
-    @include mixins.flex(row, center, wrap);
+    @include mixins.flex(column, center, wrap);
     align-items: center;
-    gap: 10px;
+    gap: 5px;
+    width: 120px;
+    height: 125px;
+    margin-bottom: 0px;
+    border-radius: 25px;
+    filter: drop-shadow(5px 5px 10px #777777);
     @include q.md-up {
       @include mixins.flex(column, center, wrap);
     }
   }
 
   &__type {
-    @include mixins.text(1.7em, 600);
+    @include mixins.text(1.3em, 600, 2px);
   }
 
   &__logo {
-    font-size: 2.2em;
-    transition: all 0.2s ease-in-out;
+    font-size: 4.3em;
+  }
+}
+
+// Projects page styling
+.projects {
+  @include mixins.flex(column, center, nowrap);
+  gap: 30px;
+  height: 100%;
+
+  &__heading {
+    @include mixins.text(2.5em, 600, 2px);
+  }
+
+  &__container {
+    @include mixins.flex(column, flex-start, nowrap);
+    align-items: center;
+    gap: 30px;
+    @include q.md-up {
+      @include mixins.flex(row, flex-start, nowrap);
+    }
+  }
+
+  &__card {
+    @include mixins.flex(column, center, nowrap);
+    align-items: center;
+    gap: 15px;
+
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    padding: 20px;
     &:hover {
-      transform: scale(1.5);
+      transition: 0.5s;
+      filter: drop-shadow(5px 5px 10px #807f7f);
+    }
+    @include q.md-up {
+      height: 450px;
+      width: 400px;
+    }
+  }
+
+  &__thumbnail {
+    width: 200px;
+    height: 250px;
+    border-radius: 25px;
+    filter: drop-shadow(5px 5px 10px #777777);
+    transition: 0.3s;
+  }
+
+  &__name {
+    @include mixins.text(1.7em, 500, 2px);
+    text-align: center;
+  }
+
+  &__details {
+    @include mixins.text(1.2em, 500, 2px);
+    text-align: center;
+    width: 100%;
+  }
+
+  &__icons {
+    &:hover {
+      @include mixins.hover;
+    }
+  }
+}
+
+.fa-solid {
+  font-size: 1.5em;
+  color: palette.$light;
+  &:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+    filter: drop-shadow(5px 5px 10px #777777);
+  }
+}
+
+//Contact footer styling
+.contact {
+  @include mixins.flex(column, space-between, nowrap);
+  align-items: center;
+  height: 100%;
+
+  &__heading {
+    @include mixins.text(1.8em, 600, 2px);
+  }
+
+  &__links {
+    border-radius: 151px 151px 151px 151px;
+    font-size: 1.8em;
+    color: #e7e7e7;
+    padding: 10px;
+    text-decoration: none;
+
+    &:hover {
+      @include mixins.hover;
     }
   }
 }

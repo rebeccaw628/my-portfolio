@@ -5,10 +5,10 @@ let isHidden = true;
 const displayMenu = () => {
   if (isHidden) {
     isHidden = false;
-    menu.classList.remove("hidden");
+    menu.classList.remove("toggle");
   } else {
     isHidden = true;
-    menu.classList.add("hidden");
+    menu.classList.add("toggle");
   }
 };
 

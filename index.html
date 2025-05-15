@@ -6,7 +6,15 @@
     <title>Rebecca Wu</title>
     <script src="./script.js" defer type="module"></script>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/6d18dc06d5.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -19,69 +27,176 @@
             <span class="navbar__hamburger"></span>
             <span class="navbar__hamburger"></span>
           </button>
-          <ul class="navbar__text hidden">
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#skills">SKILLS</a></li>
-            <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#about">ABOUT</a></li>
-            <li><a href="#contact">CONTACT</a></li>
+          <ul class="navbar__text toggle">
+            <li><a href="#home" class="navbar__pages">HOME</a></li>
+            <li><a href="#about" class="navbar__pages">ABOUT</a></li>
+            <li><a href="#projects" class="navbar__pages">PROJECTS</a></li>
+            <li><a href="#contact" class="navbar__pages">CONTACT</a></li>
           </ul>
         </div>
       </nav>
     </header>
 
-    <div class="content">
-      <section id='home' class="landing page-block">
-        <h2 class="landing__text">
-          hi, i'm <span class="landing__name">rebecca!</span>
-        </h2>
-        <h3 class="landing__role">junior software developer</span></h3>
-      </section>
+    <main>
+      <div class="content">
+        <section id="home" class="landing page-block">
+          <div class="landing__intro">
+            <h2 class="landing__name">
+              REBECCA WU
+              <!-- <span class="landing__name">rebecca!</span> -->
+            </h2>
+            <h3 class="landing__role">junior software developer</h3>
+          </div>
+          <div class="socials">
+            <div class="socials__link">
+              <a
+                href="https://www.linkedin.com/in/rebeccawu628/"
+                target="_blank"
+                aria-label="LinkedIn Profile"
+              >
+                <i class="fa-brands fa-linkedin socials__icons"></i>
+              </a>
+            </div>
+            <div class="socials__link">
+              <a
+                href="https://github.com/rebeccaw628"
+                target="_blank"
+                aria-label="Github Profile"
+              >
+                <i class="fa-brands fa-github socials__icons"></i>
+              </a>
+            </div>
+          </div>
+        </section>
 
-      <section id="skills" class="skills page-block">
-        <h4 class="skills__title">tech stack:</h4>
-        <div class="skills__container">
-          <div class="skills__card">
-            <p class="skills__type">HTML</p>
-            <i class="skills__logo devicon-html5-plain colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">CSS</p>
-            <i class="skills__logo devicon-css3-plain colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">SASS</p>
-            <i class="skills__logo devicon-sass-original colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">JavaScript</p>
-            <i class="skills__logo devicon-javascript-plain colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">ReactJS</p>
-            <i class="skills__logo devicon-react-original colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">Java</p>
-            <i class="skills__logo devicon-java-plain colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">SQL</p>
-            <i class="skills__logo devicon-azuresqldatabase-plain"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">Git</p>
-            <i class="skills__logo devicon-git-plain colored"></i>
-          </div>
-          <div class="skills__card">
-            <p class="skills__type">AWS</p>
-            <i class="skills__logo devicon-amazonwebservices-plain-wordmark colored"></i>
-          </div>
+        <div id="about" class="about_container page-block">
+          <section class="about">
+            <h3 class="about__heading">ABOUT ME</h3>
+            <p class="about__intro">
+              Hi I’m Rebecca — a problem solver at heart! I used to decipher
+              Excel spreadsheets, but now I bring ideas to life through code. My
+              passion for coding sparked during a Uni course where I built a
+              financial model in Excel and realised how much I loved creating
+              solutions from scratch.
+            </p>
+            <p class="about__intro">
+              In my spare time, I like to try the latest viral food
+              combinations, perfect my matcha recipe, and binge-watch whatever’s
+              trending on Netflix.
+            </p>
+          </section>
+
+          <section id="skills" class="skills page-block">
+            <h3 class="skills__heading">TECH STACK</h3>
+            <div class="skills__container">
+              <div class="skills__card">
+                <i class="skills__logo devicon-html5-plain colored"></i>
+                <p class="skills__type">HTML</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-css3-plain colored"></i>
+                <p class="skills__type">CSS</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-sass-original colored"></i>
+                <p class="skills__type">SASS</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-javascript-plain colored"></i>
+                <p class="skills__type">JavaScript</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-react-original colored"></i>
+                <p class="skills__type">ReactJS</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-java-plain colored"></i>
+                <p class="skills__type">Java</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-azuresqldatabase-plain"></i>
+                <p class="skills__type">SQL</p>
+              </div>
+              <div class="skills__card">
+                <i class="skills__logo devicon-git-plain colored"></i>
+                <p class="skills__type">Git</p>
+              </div>
+              <div class="skills__card">
+                <i
+                  class="skills__logo devicon-amazonwebservices-plain-wordmark colored"
+                ></i>
+                <p class="skills__type">AWS</p>
+              </div>
+            </div>
+          </section>
         </div>
-      </section>
-      <section class="projects page-block"></section>
-      <section class="about page-block"></section>
-      <section class="contact page-block"></section>
-    </div>
+
+        <section id="projects" class="projects page-block">
+          <h3 class="projects__heading">MY PROJECTS</h3>
+          <div class="projects__container">
+            <article class="projects__card">
+              <img
+                class="projects__thumbnail"
+                src="https://raw.githubusercontent.com/rebeccaw628/hangman/refs/heads/main/assets/img/thumbnail/thumbnail.png"
+                alt="project-preview"
+              />
+              <h5 class="projects__name">HANGMAN</h5>
+              <p class="projects__details">
+                A recreation of the classic Hangman game using JavaScript and
+                DOM manipulation.
+              </p>
+              <div class="project__icons-wrapper">
+                <a href="https://rebeccaw628.github.io/hangman/" target="_blank"
+                  ><i class="fa-solid fa-rocket projects__icons"></i
+                ></a>
+                <a href="https://github.com/rebeccaw628/hangman" target="_blank"
+                  ><i class="fa-solid fa-code projects__icons"></i
+                ></a>
+              </div>
+            </article>
+
+            <article class="projects__card">
+              <img
+                class="projects__thumbnail"
+                src="https://raw.githubusercontent.com/rebeccaw628/morse-code-translator/refs/heads/main/assets/thumbnail.png"
+                alt="project-preview"
+              />
+              <h5 class="projects__name">MORSE CODE TRANSLATOR</h5>
+              <p class="projects__details">
+                A project that uses JavaScript and HTML to translate English
+                text into Morse Code and vice versa.
+              </p>
+              <div class="project__icons-wrapper">
+                <a
+                  href="https://rebeccaw628.github.io/morse-code-translator/"
+                  target="_blank"
+                  ><i class="fa-solid fa-rocket projects__icons"></i
+                ></a>
+                <a href="https://github.com/rebeccaw628/hangman" target="_blank"
+                  ><i class="fa-solid fa-code projects__icons"></i
+                ></a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="contact" class="contact page-block">
+          <h4 class="contact__heading">CONTACT</h4>
+          <div class="contact__details">
+            <a
+              href="https://www.linkedin.com/in/rebeccawu628/"
+              target="_blank"
+              aria-label="LinkedIn Profile"
+            >
+              <i class="fa-brands fa-linkedin contact__links"></i>
+            </a>
+
+            <a href="mailto:rebecca.wu628@gmail.com" target="_blank">
+              <i class="fa-solid fa-envelope contact__links"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
   </body>
 </html>

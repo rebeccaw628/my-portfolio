@@ -1,9 +1,0 @@
-@use "../partials/palette.scss";
-@use "./mixins.scss";
-
-a {
-  @include mixins.text(15px, 600);
-  text-shadow: 0 0 2px palette.$light;
-  color: palette.$light;
-  text-decoration: none;
-}
